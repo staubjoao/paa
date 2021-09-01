@@ -1,14 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int pow(int x, int n)
+int power(int x, int n)
 {
-    if(n==0)
+    if (n == 0)
         return 1;
-    return (x*pow(x,n-1));
+    else if ((n % 2) == 0)
+    {
+        int aux;
+        aux = power(x, n / 2);
+        printf("%d\n", aux);
+        return aux * aux;
+    }
+    else
+        return power(x, n - 1) * x;
 }
 
 int main()
 {
-    printf("%d", pow(2,7));
+    printf("%d", power(2, 28));
     return 0;
 }

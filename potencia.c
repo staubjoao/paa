@@ -8,7 +8,6 @@ int power(int x, int n)
     {
         int aux;
         aux = power(x, n / 2);
-        printf("%d\n", aux);
         return aux * aux;
     }
     else
